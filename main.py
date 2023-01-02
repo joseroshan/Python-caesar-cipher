@@ -10,6 +10,7 @@ def caesar(start_text, shift_amount, cipher_direction):
     if char in alphabet:
       position = alphabet.index(char)
       new_position = position + shift_amount
+      #Once end of alphabet is reached, it goes back to beginning.
       if new_position >= len_alphabet:
         new_position -= len_alphabet
       end_text += alphabet[new_position]
@@ -29,7 +30,7 @@ while not should_end:
   text = input("Type your message:\n").lower()
   shift = int(input("Type the shift number:\n"))
   
-  #To handle a shift that is greater than the number of letters in the alphabet?
+  #To handle a shift that is greater than the number of letters in the alphabet
   shift = shift % 26
 
   caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
